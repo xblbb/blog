@@ -28,8 +28,9 @@
 <script setup lang="ts">
 // --- 组件 ---
 import { RouterLink } from 'vue-router'
+
 // --- 功能 ---
-import { sitePathLabel } from '../../data/home'
+import { sitePathLabel } from '@/data/home'
 
 defineProps<{
   navItems: { label: string; href: string; emphasis?: boolean }[]

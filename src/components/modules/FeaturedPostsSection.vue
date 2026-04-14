@@ -16,8 +16,9 @@
 <script setup lang="ts">
 // --- 组件 ---
 import FeaturedPostCard from './FeaturedPostCard.vue'
+
 // --- 功能 ---
-import type { FeaturedPost } from '../../data/home'
+import type { FeaturedPost } from '@/data/home'
 
 defineProps<{
   post: FeaturedPost

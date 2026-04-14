@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 // --- 功能 ---
-import type { StatItem } from '../../data/home'
+import type { StatItem } from '@/data/home'
 
 defineProps<{
   hero: { status: string; name: string; tagline: string; bio: string }

@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 // --- 功能 ---
-import type { TopicItem } from '../../../data/home'
+import type { TopicItem } from '@/data/home'
 
 defineProps<{
   items: TopicItem[]

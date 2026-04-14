@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 // --- 功能 ---
-import { sitePathLabel } from '../../data/home'
+import { sitePathLabel } from '@/data/home'
 
 defineProps<{
   year: number

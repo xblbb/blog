@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 // --- 功能 ---
-import type { RecentPost } from '../../data/home'
+import type { RecentPost } from '@/data/home'
 
 defineProps<{
   row: RecentPost

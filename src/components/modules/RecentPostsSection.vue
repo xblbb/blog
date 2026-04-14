@@ -31,12 +31,14 @@
 <script setup lang="ts">
 // --- 组件 ---
 import RecentPostRow from './RecentPostRow.vue'
+
 // --- pinia ---
 import { storeToRefs } from 'pinia'
-import { useHomeFilterStore, type RecentFilter } from '../../stores/homeFilter'
+import { useHomeFilterStore, type RecentFilter } from '@/stores/homeFilter'
+
 // --- 功能 ---
 import { computed } from 'vue'
-import type { RecentPost } from '../../data/home'
+import type { RecentPost } from '@/data/home'
 
 const props = defineProps<{
   posts: RecentPost[]

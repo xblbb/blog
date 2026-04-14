@@ -1,0 +1,20 @@
+---
+description: Vue 引入区注释与 import 之间保留一行空行
+globs: **/*.vue
+alwaysApply: false
+---
+
+# Vue 引入注释空行规范
+
+- 在 `script setup` 或 `script` 的引入区中，分组注释后必须空一行再写 `import`。
+- 同一文件内多个分组注释之间也保持单个空行，避免注释与导入语句黏连。
+
+```vue
+// --- 组件 ---
+
+import { Foo } from 'bar'
+
+// --- 类型/接口 ---
+
+import type { Baz } from './types'
+```

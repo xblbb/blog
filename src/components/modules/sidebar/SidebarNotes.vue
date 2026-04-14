@@ -19,8 +19,9 @@
 <script setup lang="ts">
 // --- 组件 ---
 import { ChevronRight } from 'lucide-vue-next'
+
 // --- 功能 ---
-import type { SidebarNoteItem } from '../../../data/home'
+import type { SidebarNoteItem } from '@/data/home'
 
 defineProps<{
   items: SidebarNoteItem[]

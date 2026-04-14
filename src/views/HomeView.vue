@@ -49,16 +49,17 @@
 
 <script setup lang="ts">
 // --- 组件 ---
-import PageContainer from '../components/layout/PageContainer.vue'
-import SiteFooter from '../components/layout/SiteFooter.vue'
-import SiteHeader from '../components/layout/SiteHeader.vue'
-import FeaturedPostsSection from '../components/modules/FeaturedPostsSection.vue'
-import HeroSection from '../components/modules/HeroSection.vue'
-import RecentPostsSection from '../components/modules/RecentPostsSection.vue'
-import SidebarAbout from '../components/modules/sidebar/SidebarAbout.vue'
-import SidebarNotes from '../components/modules/sidebar/SidebarNotes.vue'
-import SidebarSubscribe from '../components/modules/sidebar/SidebarSubscribe.vue'
-import SidebarTopics from '../components/modules/sidebar/SidebarTopics.vue'
+import PageContainer from '@/components/layout/PageContainer.vue'
+import SiteFooter from '@/components/layout/SiteFooter.vue'
+import SiteHeader from '@/components/layout/SiteHeader.vue'
+import FeaturedPostsSection from '@/components/modules/FeaturedPostsSection.vue'
+import HeroSection from '@/components/modules/HeroSection.vue'
+import RecentPostsSection from '@/components/modules/RecentPostsSection.vue'
+import SidebarAbout from '@/components/modules/sidebar/SidebarAbout.vue'
+import SidebarNotes from '@/components/modules/sidebar/SidebarNotes.vue'
+import SidebarSubscribe from '@/components/modules/sidebar/SidebarSubscribe.vue'
+import SidebarTopics from '@/components/modules/sidebar/SidebarTopics.vue'
+
 // --- 功能 ---
 import {
   featuredPost,
@@ -68,7 +69,7 @@ import {
   sidebarNotes,
   stats,
   topics,
-} from '../data/home'
+} from '@/data/home'
 
 const navItems = [
   { label: '文章', href: '#' },
