@@ -42,13 +42,7 @@
 // --- 功能 ---
 import type { ProfileBlock } from '@/data/home'
 
-// 默认值需要通过 withDefaults 辅助函数设置（defineProps 内无法给 props 直接赋值默认值）。
-// 例：
-withDefaults(defineProps<{
+defineProps<{
   profile: ProfileBlock
-  avatarUrl?: string
-}>(), {
-  avatarUrl: new URL('@/assets/images/Profile_photo.jpg', import.meta.url).href
-})
-
+}>()
 </script>
