@@ -10,7 +10,7 @@
     </RouterLink>
     <nav
       class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-gray-400 sm:gap-x-8"
-      aria-label="主导航"
+      aria-label="导航"
     >
       <a
         v-for="item in navItems"

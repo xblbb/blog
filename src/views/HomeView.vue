@@ -72,8 +72,8 @@ import {
 } from '@/data/home'
 
 const navItems = [
-  { label: '文章', href: '#' },
-  { label: '笔记', href: '#' },
+  { label: '内容类型1', href: '#' },
+  { label: '内容类型2', href: '#' },
   { label: '关于', href: '#' },
   { label: '订阅源', href: '#', emphasis: true },
 ]

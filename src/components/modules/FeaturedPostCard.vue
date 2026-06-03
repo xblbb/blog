@@ -7,7 +7,7 @@
         {{ post.tag }}
       </span>
       <span class="text-xs text-gray-600">{{ post.dateLabel }}</span>
-      <span class="text-xs text-gray-600">· 约 {{ post.readMinutes }} 分钟阅读</span>
+      <span class="text-xs text-gray-600">· 约 {{ post.readMinutes }} 阅读时长单位</span>
     </div>
     <h2 class="text-xl font-bold leading-snug text-white">{{ post.title }}</h2>
     <p class="text-sm leading-normal text-gray-400">{{ post.summary }}</p>
