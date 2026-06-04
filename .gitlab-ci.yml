@@ -1,0 +1,34 @@
+cache:
+  paths:
+    - node_modules/
+
+# 当 main 分支有推送时，自动合并 main 到 gitlab 分支
+sync-main-to-gitlab:
+  stage: build
+  tags:
+    - my-blog
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - git config user.name "gitlab-ci"
+    - git config user.email "gitlab-ci@iris.hikvision.com.cn"
+    - git remote set-url origin https://oauth2:${GITLAB_TOKEN}@iris.hikvision.com.cn/gushaopeng5/my-blog.git
+    - git fetch origin main
+    - git checkout gitlab
+    - git merge origin/main --no-edit
+    - git push origin gitlab
+
+pages:
+  stage: deploy
+  tags:
+    - my-blog
+  script:
+    - npm install --legacy-peer-deps  # 安装依赖（忽略 peer dependency 冲突）
+    - npm run build     # 执行构建（Vite 默认输出到 dist 目录）
+    - if (Test-Path public) { Remove-Item -Recurse -Force public }
+    - Rename-Item dist public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "gitlab"
