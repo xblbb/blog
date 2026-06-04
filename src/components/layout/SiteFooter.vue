@@ -8,7 +8,7 @@
     </div>
     <nav
       class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-gray-600 sm:gap-x-6"
-      aria-label="页脚链接"
+      aria-label="页脚"
     >
       <a
         v-for="item in links"

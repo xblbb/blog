@@ -3,11 +3,11 @@
 import type { TopicItem } from './types'
 
 export const topics: TopicItem[] = [
-  { slug: 'Vue' },
-  { slug: 'TypeScript' },
-  { slug: '工程化', active: true },
-  { slug: '可视化' },
-  { slug: '性能优化' },
-  { slug: '组件库' },
-  { slug: '随笔' },
+  { slug: '技术栈1' },
+  { slug: '技术栈2' },
+  { slug: '技术方向1', active: true },
+  { slug: '技术方向2' },
+  { slug: '技术方向3' },
+  { slug: '技术方向4' },
+  { slug: '文章类型' },
 ]

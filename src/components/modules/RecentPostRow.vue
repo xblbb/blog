@@ -12,7 +12,7 @@
         <span class="rounded-sm bg-gray-900 px-2 py-0.5 text-xs font-medium text-gray-400">{{
           row.tag
         }}</span>
-        <span class="text-xs text-gray-600">{{ row.readMinutes }} 分钟</span>
+        <span class="text-xs text-gray-600">{{ row.readMinutes }} 阅读时长单位</span>
       </div>
       <h3 class="break-words text-base font-semibold text-white">{{ row.title }}</h3>
       <p class="text-xs leading-snug text-gray-500">{{ row.summary }}</p>

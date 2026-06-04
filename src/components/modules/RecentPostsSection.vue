@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mb-4 flex w-full min-w-0 flex-wrap items-end justify-between gap-3 pb-4 pt-2">
-      <p class="text-xs font-semibold tracking-widest text-gray-600">近期文章</p>
+      <p class="text-xs font-semibold tracking-widest text-gray-600">近期内容</p>
       <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
         <button
           v-for="key in filterKeys"
@@ -51,8 +51,8 @@ const filterKeys: RecentFilter[] = ['all', 'posts', 'notes']
 
 const filterLabels: Record<RecentFilter, string> = {
   all: '全部',
-  posts: '文章',
-  notes: '笔记',
+  posts: '内容类型1',
+  notes: '内容类型2',
 }
 
 const filtered = computed(() => {
