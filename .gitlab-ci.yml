@@ -3,6 +3,7 @@ cache:
     - node_modules/
 
 # 当 main 分支有推送时，自动合并 main 到 gitlab 分支
+# 冲突时以 main 版本为准，但保留 gitlab 分支的 .gitlab-ci.yml
 sync-main-to-gitlab:
   stage: build
   tags:
@@ -15,7 +16,8 @@ sync-main-to-gitlab:
     - git remote set-url origin https://oauth2:${GITLAB_TOKEN}@iris.hikvision.com.cn/gushaopeng5/my-blog.git
     - git fetch origin main
     - git checkout gitlab
-    - git merge origin/main --no-edit
+    - git merge origin/main --no-edit -X theirs
+    - if ($LASTEXITCODE -ne 0) { git checkout --theirs .gitlab-ci.yml; git add .gitlab-ci.yml; git commit --no-edit }
     - git push origin gitlab
 
 pages:
