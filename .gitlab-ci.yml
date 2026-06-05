@@ -16,8 +16,15 @@ sync-main-to-gitlab:
     - git remote set-url origin https://oauth2:${GITLAB_TOKEN}@iris.hikvision.com.cn/gushaopeng5/my-blog.git
     - git fetch origin main
     - git checkout gitlab
-    - git merge origin/main --no-edit -X theirs
-    - if ($LASTEXITCODE -ne 0) { git checkout --theirs .gitlab-ci.yml; git add .gitlab-ci.yml; git commit --no-edit }
+    # 先保存 gitlab 分支的 .gitlab-ci.yml 内容哈希，合并后恢复
+    - $ciHash = git rev-parse HEAD:.gitlab-ci.yml
+    # 合并 main 到 gitlab，冲突时以 main 版本为准；合并失败时提交已解决的冲突
+    - git merge origin/main --no-edit -X theirs; if ($LASTEXITCODE -ne 0) { git add -A; git commit --no-edit }
+    # 无论合并是否成功，都恢复 gitlab 分支的 .gitlab-ci.yml
+    - git checkout $ciHash -- .gitlab-ci.yml
+    - git add .gitlab-ci.yml
+    # 只有 .gitlab-ci.yml 确实被改动时才 amend 合并提交
+    - git diff --cached --quiet; if ($LASTEXITCODE -ne 0) { git commit --amend --no-edit }
     - git push origin gitlab
 
 pages:
