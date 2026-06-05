@@ -9,6 +9,7 @@
     </PageContainer>
 
     <PageContainer>
+      测试123
       <HeroSection :hero="hero" :stats="stats" />
     </PageContainer>
 
